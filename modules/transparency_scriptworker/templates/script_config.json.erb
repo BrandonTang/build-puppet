@@ -1,0 +1,81 @@
+{
+    "work_dir": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/work",
+    "artifact_dir": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/artifacts",
+    "aiohttp_max_connections": 10,
+    "checksums_digests": ["sha512", "sha256"],
+    "blobs_needing_prettynaming_contents": [
+        "target.test_packages.json"
+    ],
+
+    "schema_file": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/data/transparency_task_schema.json",
+
+    "verbose": <%= scope.lookupvar("transparency_scriptworker::settings::verbose_logging") %>,
+    "dummy": false,
+    "disable_certs": false,
+
+    "AWS_KEYS": {
+        "AWS_ACCESS_KEY_ID": "<%= @env_config["transparency_aws_access_key_id"] %>",
+        "AWS_SECRET_ACCESS_KEY": "<%= @env_config["transparency_aws_secret_access_key"] %>"
+    },
+
+    "template_files": {
+        "firefox_nightly": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/templates/firefox_nightly.yml",
+        "firefox_nightly_repacks": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/templates/firefox_nightly_repacks.yml",
+        "fennec_nightly": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/templates/fennec_nightly.yml",
+        "fennec_nightly_repacks": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/templates/fennec_nightly_repacks.yml",
+        "fennecx86_nightly": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/templates/fennecx86_nightly.yml",
+        "fennecaarch64_nightly": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/templates/fennecaarch64_nightly.yml"
+    },
+
+    "actions": {
+        "push-to-nightly": {
+            "firefox_nightly": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/templates/firefox_nightly.yml",
+            "firefox_nightly_repacks": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/templates/firefox_nightly_repacks.yml",
+            "fennec_nightly": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/templates/fennec_nightly.yml",
+            "fennec_nightly_repacks": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/templates/fennec_nightly_repacks.yml",
+            "fennecx86_nightly": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/templates/fennecx86_nightly.yml",
+            "fennecaarch64_nightly": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/templates/fennecaarch64_nightly.yml"
+        },
+        "push-to-candidates": {
+            "fennec_candidates": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/templates/fennec_candidates.yml",
+            "fennec_candidates_repacks": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/templates/fennec_candidates_repacks.yml",
+            "fennecx86_candidates": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/templates/fennecx86_candidates.yml",
+            "fennecaarch64_candidates": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/templates/fennecaarch64_candidates.yml"
+        },
+        "push-to-releases": {},
+        "push-to-staging": {}
+    },
+
+    "bucket_config": {
+        "nightly": {
+            "credentials": {
+                "id": "<%= @env_config["nightly_transparency_aws_access_key_id"] %>",
+                "key": "<%= @env_config["nightly_transparency_aws_secret_access_key"] %>"
+            },
+            "buckets": {
+                "firefox": "<%= @env_config["nightly_transparency_aws_s3_firefox_bucket"] %>",
+                "fennec": "<%= @env_config["nightly_transparency_aws_s3_fennec_bucket"] %>"
+            }
+        },
+        "release": {
+            "credentials": {
+                "id": "<%= @env_config["release_transparency_aws_access_key_id"] %>",
+                "key": "<%= @env_config["release_transparency_aws_secret_access_key"] %>"
+            },
+            "buckets": {
+                "firefox": "<%= @env_config["release_transparency_aws_s3_firefox_bucket"] %>",
+                "fennec": "<%= @env_config["release_transparency_aws_s3_fennec_bucket"] %>"
+            }
+        },
+        "dep": {
+            "credentials": {
+                "id": "<%= @env_config["dep_transparency_aws_access_key_id"] %>",
+                "key": "<%= @env_config["dep_transparency_aws_secret_access_key"] %>"
+            },
+            "buckets": {
+                "firefox": "<%= @env_config["dep_transparency_aws_s3_firefox_bucket"] %>",
+                "fennec": "<%= @env_config["dep_transparency_aws_s3_fennec_bucket"] %>"
+            }
+        }
+    }
+}
