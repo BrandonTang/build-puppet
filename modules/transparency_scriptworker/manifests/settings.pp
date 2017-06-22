@@ -13,7 +13,6 @@ class transparency_scriptworker::settings {
 
     $env_config = {
         'dev' => {
-            provisioner_id                     => 'test-dummy-provisioner',
             worker_type                        => 'dummy-worker-transpar',
             taskcluster_client_id              => secret('transparencyworker_dev_taskcluster_client_id'),
             taskcluster_access_token           => secret('transparencyworker_dev_taskcluster_access_token'),

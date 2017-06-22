@@ -65,7 +65,6 @@ class transparency_scriptworker {
 
             taskcluster_client_id    => $env_config["taskcluster_client_id"],
             taskcluster_access_token => $env_config["taskcluster_access_token"],
-            provisioner_id           => $env_config["provisioner_id"],
             worker_group             => $transparency_scriptworker::settings::worker_group,
             worker_type              => $env_config["worker_type"],
 
