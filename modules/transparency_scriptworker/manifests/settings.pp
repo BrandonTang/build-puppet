@@ -16,8 +16,8 @@ class transparency_scriptworker::settings {
 
     $env_config = {
         'dev' => {
-            transparency_aws_access_key_id     => secret('transparency-aws_access_key_id'),
-            transparency_aws_secret_access_key => secret('transparency-aws_secret_access_key'),
+            transparency_aws_access_key_id     => secret('transparency_aws_access_key_id'),
+            transparency_aws_secret_access_key => secret('transparency_aws_secret_access_key'),
         },
         'prod' => {
             nightly_transparency_aws_access_key_id     => secret('nightly-transparency-aws_access_key_id'),
