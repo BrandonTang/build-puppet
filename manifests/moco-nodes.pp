@@ -1066,7 +1066,7 @@ node /pushapkworker-.*\.srv\.releng\..*\.mozilla\.com/ {
 # Transparency scriptworkers
 node /dev-linux64-ec2-btang\.dev\.releng.use1\.mozilla\.com/ {
     $aspects = [ 'maximum-security' ]
-    $transparency_worker_env = "dev"
+    $transparencyworker_env = "dev"
     $timezone = "UTC"
     $only_user_ssh = true
     include toplevel::server::transparencyscriptworker
