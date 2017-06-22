@@ -18,22 +18,6 @@ class transparency_scriptworker::settings {
         'dev' => {
             transparency_aws_access_key_id     => secret('transparency_aws_access_key_id'),
             transparency_aws_secret_access_key => secret('transparency_aws_secret_access_key'),
-        },
-        'prod' => {
-            nightly_transparency_aws_access_key_id     => secret('nightly-transparency-aws_access_key_id'),
-            nightly_transparency_aws_secret_access_key => secret('nightly-transparency-aws_secret_access_key'),
-            nightly_transparency_aws_s3_firefox_bucket => 'net-mozaws-prod-delivery-firefox',
-            nightly_transparency_aws_s3_fennec_bucket  => 'net-mozaws-prod-delivery-archive',
-
-            release_transparency_aws_access_key_id     => secret('transparency-aws_access_key_id'),
-            release_transparency_aws_secret_access_key => secret('transparency-aws_secret_access_key'),
-            release_transparency_aws_s3_firefox_bucket => 'net-mozaws-prod-delivery-firefox',
-            release_transparency_aws_s3_fennec_bucket  => 'net-mozaws-prod-delivery-archive',
-
-            dep_transparency_aws_access_key_id         => secret('stage-transparency-aws_access_key_id'),
-            dep_transparency_aws_secret_access_key     => secret('stage-transparency-aws_secret_access_key'),
-            dep_transparency_aws_s3_firefox_bucket     => 'net-mozaws-stage-delivery-firefox',
-            dep_transparency_aws_s3_fennec_bucket      => 'net-mozaws-stage-delivery-archive',
         }
     }
 }
