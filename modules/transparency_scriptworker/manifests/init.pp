@@ -72,6 +72,10 @@ class transparency_scriptworker {
 
             cot_job_type             => 'transparency',
 
+            sign_chain_of_trust      => $env_config["sign_chain_of_trust"],
+            verify_chain_of_trust    => $env_config["verify_chain_of_trust"],
+            verify_cot_signature     => $env_config["verify_cot_signature"],
+
             verbose_logging          => $transparency_scriptworker::settings::verbose_logging,
     }
 

@@ -18,6 +18,9 @@ class transparency_scriptworker::settings {
         'dev' => {
             transparency_aws_access_key_id     => secret('transparency-aws_access_key_id'),
             transparency_aws_secret_access_key => secret('transparency-aws_secret_access_key'),
+            sign_chain_of_trust                => false,
+            verify_chain_of_trust              => false,
+            verify_cot_signature               => false
         }
     }
 }
