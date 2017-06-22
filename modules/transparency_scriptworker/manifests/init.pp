@@ -39,7 +39,7 @@ class transparency_scriptworker {
                   'python-dateutil==2.6.0',
                   'python-gnupg==0.4.0',
                   'PyYAML==3.12',
-                  'redo==1.5',
+                  'redo==1.6',
                   'requests==2.18.1',
                   'scriptworker==4.1.2',
                   'six==1.10.0',
@@ -63,10 +63,11 @@ class transparency_scriptworker {
             username                 => $users::builder::username,
             group                    => $users::builder::group,
 
-            taskcluster_client_id    => $transparency_scriptworker::settings::taskcluster_client_id,
-            taskcluster_access_token => $transparency_scriptworker::settings::taskcluster_access_token,
+            taskcluster_client_id    => $env_config["taskcluster_client_id"],
+            taskcluster_access_token => $env_config["taskcluster_access_token"],
+            provisioner_id           => $env_config["provisioner_id"],
             worker_group             => $transparency_scriptworker::settings::worker_group,
-            worker_type              => $transparency_scriptworker::settings::worker_type,
+            worker_type              => $env_config["worker_type"],
 
             task_max_timeout         => $transparency_scriptworker::settings::task_max_timeout,
 
