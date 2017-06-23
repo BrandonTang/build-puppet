@@ -5,7 +5,7 @@
 class transparency_scriptworker::settings {
     $root                     = '/builds/scriptworker'
     $task_script              = "${root}/bin/transparencyscript"
-    $task_script_config       = "${root}/script_config.json"
+    $task_script_config       = "${root}/config.json"
     $task_max_timeout         = 1800
 
     $worker_group             = 'test-dummy-workers'
