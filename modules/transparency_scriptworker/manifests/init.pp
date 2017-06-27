@@ -45,7 +45,7 @@ class transparency_scriptworker {
                   'six==1.10.0',
                   'slugid==1.0.7',
                   'taskcluster==1.3.3',
-                  'transparencyscript==0.0.1',
+                  'transparencyscript==0.0.2',
                   'urllib3==1.21.1',
                   'virtualenv==15.1.0',
                   'yarl==0.10.3',
