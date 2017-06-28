@@ -162,6 +162,9 @@ class packages::setup {
 
                 'httpd':
                     url_path => "repos/yum/custom/httpd/${::architecture}";
+
+                'lego':
+                    url_path => "repos/yum/custom/lego/${::architecture}";"
             }
 
             # to flush the metadata cache, increase this value by one (or
