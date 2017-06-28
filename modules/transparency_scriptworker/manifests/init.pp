@@ -6,9 +6,9 @@ class transparency_scriptworker {
     include transparency_scriptworker::settings
     include dirs::builds
     include packages::mozilla::python35
+    include packages::mozilla::lego
     include users::builder
     include tweaks::swap_on_instance_storage
-    include packages::lego
     include packages::gcc
     include packages::make
     include packages::libffi
