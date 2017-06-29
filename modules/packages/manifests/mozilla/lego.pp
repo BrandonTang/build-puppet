@@ -3,7 +3,6 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 class packages::mozilla::lego {
-    realize(Packages::Yumrepo['lego'])
     case $::operatingsystem {
         CentOS: {
             package {
