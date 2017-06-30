@@ -4,12 +4,13 @@
 
 class transparency_scriptworker::settings {
     $root                     = '/builds/scriptworker'
-    $task_script              = "${root}/bin/transparencyscript"
-    $task_script_config       = "${root}/script_config.json"
+    $task_script              = "${root}/lib/python3.5/site-packages/transparencyscript/bin/transparencyscript/script.py"
+    $task_script_config       = "${root}/work/task.json"
     $task_max_timeout         = 1800
 
     $worker_group             = 'test-dummy-workers'
     $verbose_logging          = true
+    $lego_path                = '/tools/lego/lego'
 
     $env_config = {
         'dev' => {

@@ -4,6 +4,8 @@
     "aiohttp_max_connections": 10,
     "checksums_digests": ["sha512", "sha256"],
 
+    "lego-path": <%= scope.lookupvar("transparency_scriptworker::settings::lego_path") %>,
+
     "schema_file": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/lib/python3.5/site-packages/transparencyscript/data/transparency_task_schema.json",
 
     "verbose": <%= scope.lookupvar("transparency_scriptworker::settings::verbose_logging") %>,
