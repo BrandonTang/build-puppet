@@ -87,6 +87,6 @@ class transparency_scriptworker {
             owner     => $users::builder::username,
             group     => $users::builder::group,
             content   => template("${module_name}/script_config.json.erb"),
-            show_diff => true;
+            show_diff => false;
     }
 }
