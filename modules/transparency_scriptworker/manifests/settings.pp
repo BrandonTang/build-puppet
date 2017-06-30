@@ -4,7 +4,7 @@
 
 class transparency_scriptworker::settings {
     $root                     = '/builds/scriptworker'
-    $task_script              = "${root}/lib/python3.5/site-packages/transparencyscript/bin/transparencyscript/script.py"
+    $task_script              = "${root}/lib/python3.5/site-packages/transparencyscript/script.py"
     $task_script_config       = "${root}/work/task.json"
     $task_max_timeout         = 1800
 
