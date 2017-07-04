@@ -89,4 +89,14 @@ class transparency_scriptworker {
             content   => template("${module_name}/script_config.json.erb"),
             show_diff => false;
     }
+
+    file {
+        "${transparency_scriptworker::settings::root}/passwords.json":
+            require   => Python35::Virtualenv[$transparency_scriptworker::settings::root],
+            mode      => '0600',
+            owner     => $users::builder::username,
+            group     => $users::builder::group,
+            content   => template("${module_name}/passwords.json.erb"),
+            show_diff => false;
+    }
 }
