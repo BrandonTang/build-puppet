@@ -23,7 +23,8 @@ env GOOS=linux GOARCH=amd64 go build
 %install
 base=$RPM_BUILD_ROOT/tools/lego
 mkdir -p $base
-install -m 755 lego-%{release} $base
+mv lego-%{release} lego
+install -m 755 lego $base
 
 %post
 # nothing
@@ -36,4 +37,4 @@ rm -rf %{_topdir}/BUILD/%{name}
 # list files owned by the package here
 %files
 %defattr(-,root,root)
-/tools/%{name}/lego-%{release}
+/tools/%{name}/lego
