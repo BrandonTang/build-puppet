@@ -8,7 +8,7 @@ class packages::mozilla::lego {
         CentOS: {
             package {
                 'lego':
-                    ensure => '0.3.1-1';
+                    ensure => '0.3.1-28ead50ff1ca93acdb62734d3ed8da0206d036ff';
             }
         }
         default: {
