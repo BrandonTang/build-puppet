@@ -1,10 +1,9 @@
 Summary:        lego rpm package
 Name:           lego
 Version:        0.3.1
-Release:        1
-# License is a compulsory field so you have to put something there.
+Release:        28ead50ff1ca93acdb62734d3ed8da0206d036ff
 License:        MIT
-Source0:        lego_linux_amd64.tar.xz
+Source0:        https://github.com/xenolf/lego/archive/%{release}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-build
 Group:          mozilla
 
@@ -15,7 +14,9 @@ Group:          mozilla
 %setup -n lego
 
 %build
-# nothing
+export GOPATH=%{buildroot}/go
+go get -v
+env GOOS=linux GOARCH=amd64 go build
 
 %install
 base=$RPM_BUILD_ROOT/tools/lego
