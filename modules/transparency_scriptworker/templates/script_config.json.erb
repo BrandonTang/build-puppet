@@ -1,6 +1,9 @@
 {
+    "task_json": ""<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/work/task.json",
+
+    "scriptworker_dir": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>",
     "work_dir": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/work",
-    "artifact_dir": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/artifacts",
+    "public_artifact_dir": "<%= scope.lookupvar("transparency_scriptworker::settings::root") %>/artifacts/public",
     "aiohttp_max_connections": 10,
     "checksums_digests": ["sha512", "sha256"],
 
