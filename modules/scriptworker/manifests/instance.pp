@@ -11,7 +11,7 @@ define scriptworker::instance(
     $script_worker_config = "${basedir}/scriptworker.yaml",
     $task_script_executable = "${basedir}/bin/python",
     $task_script,
-    $task_script_config = "${work_dir}/task.json",
+    $task_script_config = "${basedir}/script_config.json",
 
     $username,
     $group,
