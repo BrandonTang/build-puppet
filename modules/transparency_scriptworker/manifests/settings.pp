@@ -8,13 +8,13 @@ class transparency_scriptworker::settings {
     $task_script_config       = "${root}/script_config.json"
     $task_max_timeout         = 1800
 
-    $worker_group             = 'test-dummy-workers'
     $verbose_logging          = true
     $lego_path                = '/tools/lego/lego'
 
     $env_config = {
         'dev' => {
             worker_id                          => 'dummy-worker-1',
+            worker_group                       => 'test-dummy-workers',
             worker_type                        => 'dummy-worker-transpar',
             taskcluster_client_id              => secret('transparencyworker_dev_taskcluster_client_id'),
             taskcluster_access_token           => secret('transparencyworker_dev_taskcluster_access_token'),

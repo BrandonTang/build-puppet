@@ -66,7 +66,7 @@ class transparency_scriptworker {
             taskcluster_client_id    => $env_config["taskcluster_client_id"],
             taskcluster_access_token => $env_config["taskcluster_access_token"],
             worker_id                => $env_config["worker_id"],
-            worker_group             => $transparency_scriptworker::settings::worker_group,
+            worker_group             => $env_config["worker_group"],
             worker_type              => $env_config["worker_type"],
 
             task_max_timeout         => $transparency_scriptworker::settings::task_max_timeout,
@@ -86,8 +86,7 @@ class transparency_scriptworker {
             mode      => '0600',
             owner     => $users::builder::username,
             group     => $users::builder::group,
-            content   => template("${module_name}/script_config.json.erb"),
-            show_diff => false;
+            content   => template("${module_name}/script_config.json.erb");
     }
 
     file {

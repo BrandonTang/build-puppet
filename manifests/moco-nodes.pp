@@ -1064,13 +1064,11 @@ node /pushapkworker-.*\.srv\.releng\..*\.mozilla\.com/ {
 }
 
 # Transparency scriptworkers
-node /dev-linux64-ec2-btang\.dev\.releng.use1\.mozilla\.com/ {
+node /binarytransparencyworker-.*\.srv\.releng\..*\.mozilla\.com/ {
     $aspects = [ 'maximum-security' ]
     $transparencyworker_env = "dev"
     $timezone = "UTC"
     $only_user_ssh = true
-    $pin_puppet_server = "releng-puppet2.srv.releng.scl3.mozilla.com"
-    $pin_puppet_env = "btang"
     include toplevel::server::transparencyscriptworker
 }
 
